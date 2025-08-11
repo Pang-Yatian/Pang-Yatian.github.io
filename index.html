@@ -8,12 +8,12 @@
   
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
+  <style>
+    .tag-understanding { color: #2E8B57; font-weight: bold; } /* Sea green (unchanged) */
+    .tag-generation { color: #D2691E; font-weight: bold; }      /* Chocolate brown (warm, distinct from blue) */
+    .tag-unify { color: #9370DB; font-weight: bold; }          /* Dodger blue */
+  </style>
 </head>
-<!--
-<div style="position: relative; right: 370px; text-align:right;">
-  <small><em><q>It's about a man who has nothing, who risks everything, to feel something.</q> --Jessica Day</em></small>
-</div>
--->
 
 <body>
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -26,27 +26,22 @@
                 <name> Yatian Pang (庞雅天)</name>
               </p>
               <p>
-                Greetings! My name is Yatian Pang.
-                I'm a final-year PhD student at the National University of Singapore supervised by Prof.  <a href="https://scholar.google.com/citations?user=mfH9UFIAAAAJ&hl=en">Tay E. H. Francis</a> 
-<!--                 and working closely with Prof. <a href="https://yuanli2333.github.io/">Li Yuan</a> from PKU. -->
-                <!-- I used to work with Prof. <a href="https://sites.google.com/site/sernam/">Ser-Nam Lim</a> from UCF and Prof. <a href="https://leehomyc.github.io/">Harry Yang</a> from HKUST. -->
-<!--                 I'm also a research intern at the Qwen-VL team, now working on Qwen3-VL with <a href="https://scholar.google.com/citations?user=ylhI1JsAAAAJ&hl">Shuai Bai</a>. -->
-<!--                 I'm also a research intern at Alibaba Group, working with Dr. Shuai Bai. -->
-                
+                Greetings! My name is Yatian Pang. I'm a final-year PhD student at the National University of Singapore supervised by Prof. <a href="https://scholar.google.com/citations?user=mfH9UFIAAAAJ&hl=en">Tay E. H. Francis</a> and working closely with Prof. <a href="https://yuanli2333.github.io/">Li Yuan</a> from PKU. I'm currently a research intern at Alibaba's Qwen team working with <a href="https://scholar.google.com/citations?user=ylhI1JsAAAAJ&hl"> Shuai Bai</a>.
               </p>
-<!--               <p>
-                My research focuses on multi-modal understanding and generation.
-              </p> -->
+              
               <p>
-                <FONT COLOR="#ff0000">I am ACTIVELY looking for a full-time position starting in 2026.</FONT> Feel free to send me an email at <FONT COLOR="#1e90ff">yatian_pang@u.nus.edu</FONT>  if you're interested.
+                My research interests are multi-modal understanding and generation, as well as unified models. My long-term goal is to develop general-purpose AI systems that seamlessly understand and generate content across diverse modalities.
+              </p>
+
+              <p>
+                <FONT COLOR="#ff0000">I am ACTIVELY looking for a full-time position starting in 2026.</FONT> Feel free to send me an email at <FONT COLOR="#1e90ff">yatian_pang@u.nus.edu</FONT> if you're interested.
               </p>
               <p style="text-align:center">
                 <a href="mailto:yatian_pang@u.nus.edu">Email</a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?user=AZQyNWkAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
                 <a href="https://github.com/Pang-Yatian">Github</a> &nbsp/&nbsp
-                <!-- <a href="https://twitter.com/YujunPeiyangShi">Twitter</a> &nbsp/&nbsp -->
                 <a href="https://www.linkedin.com/in/yatian-pang-64b5a2232/">Linkedin</a> &nbsp/&nbsp
-<!--                 <a href="images/CV_Pang_Yatian__.pdf">CV</a> -->
+                <!-- <a href="images/CV_Pang_Yatian__.pdf">CV</a> -->
               </p>
             </td>
             <td style="padding:2.5%;width:30%;max-width:30%">
@@ -54,155 +49,194 @@
             </td>
           </tr>
         </tbody></table>
+
+        <!-- Projects Section -->
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tbody><tr>
             <td width="100%" valign="middle">
-              <heading>Selected Works</heading>
+              <heading>Projects</heading>
             </td>
           </tr>
           </tbody>
         </tbody></table>
 
-<!--           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>UniWorld: High-Resolution Semantic Encoders for Unified Visual Understanding and Generation</papertitle>
+            <span class="tag-understanding">[understanding]</span> <papertitle>Qwen-3 VL</papertitle>
             <br>
-            Bin Lin, Zongjian Li, Xinhua Cheng, Yuwei Niu, Yang Ye, Xianyi He, Shenghai Yuan, Wangbo Yu, Shaodong Wang, Yunyang Ge, <strong>Yatian Pang</strong>, Li Yuan
- 
+            Qwen Team, <strong>Yatian Pang</strong>
             <br>
-            arXiv, 2025
+            2025 (Work in Progress)
+            <br>
+            [<a href="https://qwenlm.github.io/">Project Page</a>]
+            <iframe src="https://ghbtns.com/github-btn.html?user=QwenLM&repo=Qwen2.5-VL&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            <p>
+              Core contributor to video understanding development for Qwen3-VL, focusing on long video and streaming video analysis. Achieved state-of-the-art results on VideoMME benchmark.
+            </p>
+          </td>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <span class="tag-unify">[unify]</span> <papertitle>UniWorld</papertitle>
+            <br>
+            Bin Lin, et al., <strong>Yatian Pang</strong>, Li Yuan
+            <br>
+            2025
             <br>
             [<a href="https://arxiv.org/abs/2506.03147">arXiv link</a>]
             [<a href="https://github.com/PKU-YuanGroup/UniWorld-V1">code</a>]
             <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=UniWorld-V1&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              An open-source framework to reproduce sora, a diffusion based video generation method.
-            </p> -->
-<!--           </td> -->
-<!--         </table>   -->
-
+            <p>
+              Unified framework for image understanding, generation, and editing following GPT-4o. Solved critical challenge of connecting frozen VLMs with diffusion generators via novel semantic encoder.
+            </p>
+          </td>
+        </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>Next Patch Prediction for Autoregressive Visual Generation</papertitle>
+            <span class="tag-generation">[generation]</span> <papertitle>Open-Sora-Plan</papertitle>
             <br>
-            <strong>Yatian Pang</strong>, Peng Jin, Shuo Yang, Bin Lin, Bin Zhu, Zhenyu Tang, Liuhan Chen, Francis E. H. Tay, Ser-Nam Lim, Harry Yang, Li Yuan
- 
+            Open-Sora-Plan Team, <strong>Yatian Pang</strong>
+            <br>
+            2024
+            <br>
+            [<a href="https://arxiv.org/abs/2412.00131">arXiv link</a>]
+            [<a href="https://github.com/PKU-YuanGroup/Open-Sora-Plan">code</a>]
+            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Open-Sora-Plan&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+            <p>
+              One of the earliest open-source efforts to reproduce Sora. Contributed to high-resolution, long-duration video generation architecture and open-sourced high quality video data .
+            </p>
+          </td>
+        </table>
+
+        <!-- Selected Works Section -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tbody><tr>
+            <td width="100%" valign="middle">
+              <heading>Selected works</heading>
+            </td>
+          </tr>
+          </tbody>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <span class="tag-understanding">[understanding]</span> <papertitle>Video Sparse Attention for Streaming Long Video Understanding</papertitle>
+            <br>
+            <strong>Yatian Pang</strong>, et al.
+            <br>
+            Submission in progress, 2025
+            <br>
+            [<a href="https://arxiv.org/abs/25xxxxxxx">arXiv link (coming soon)</a>]
+          </td>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <span class="tag-unify">[unify]</span> <papertitle>Unified Autoregressive Pretraining for Image Generation and Representation Learning</papertitle>
+            <br>
+            <strong>Yatian Pang</strong>, et al.
+            <br>
+            Submission in progress, 2025
+            <br>
+            [<a href="https://arxiv.org/abs/25xxxxxxx">arXiv link (coming soon)</a>]
+          </td>
+        </table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <span class="tag-generation">[generation]</span> <papertitle>Next Patch Prediction for Autoregressive Visual Generation</papertitle>
+            <br>
+            <strong>Yatian Pang</strong>, et al.
             <br>
             arXiv, 2024
             <br>
             [<a href="https://arxiv.org/abs/2412.15321">arXiv link</a>]
             [<a href="https://github.com/PKU-YuanGroup/Next-Patch-Prediction">code</a>]
             <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Next-Patch-Prediction&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              An open-source framework to reproduce sora, a diffusion based video generation method.
-            </p> -->
           </td>
-        </table>  
+        </table>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses</papertitle>
+            <span class="tag-generation">[generation]</span> <papertitle>DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses</papertitle>
             <br>
-            <strong>Yatian Pang</strong>, Bin Zhu, Bin Lin, Mingzhe Zheng, Francis E. H. Tay, Ser-Nam Lim, Harry Yang, Li Yuan
- 
+            <strong>Yatian Pang</strong>, et al.
             <br>
             ICCV 2025
             <br>
             [<a href="https://arxiv.org/abs/2412.00397">arXiv link</a>]
             [<a href="https://github.com/PKU-YuanGroup/DreamDance">code</a>]
             <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=DreamDance&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              An open-source framework to reproduce sora, a diffusion based video generation method.
-            </p> -->
           </td>
-        </table>  
-
-
-
-<!--         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>Open-Sora Plan: Open-Source Large Video Generation Model</papertitle>
-            <br>
-            Open-Sora-Plan Team
- 
-            <br>
-            arXiv, 2024
-            <br>
-            [<a href="https://arxiv.org/abs/2412.00131">arXiv link</a>]
-            [<a href="https://github.com/PKU-YuanGroup/Open-Sora-Plan">code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Open-Sora-Plan&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              An open-source framework to reproduce sora, a diffusion based video generation method.
-            </p> -->
-<!--           </td> -->
-<!--         </table>   --> 
-
-<!--         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>Languagebind: Extending video-language pretraining to n-modality by language-based
-              semantic alignment </papertitle>
-            <br>
-            Bin Zhu, Bin Lin, Munan Ning, Yang Yan, Jiaxi Cui, HongFa Wang, <strong>Yatian Pang</strong>, Wenhao Jiang, Junwu Zhang, Zongwei Li, Wancai Zhang, Zhifeng Li, Wei Liu, Li Yuan
- 
-            <br>
-            ICLR, 2024
-            <br>
-            [<a href="https://arxiv.org/abs/2310.01852">arXiv link</a>]
-            [<a href="https://github.com/PKU-YuanGroup/LanguageBind">code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=LanguageBind&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              A multi-modal pretraining framework.
-            </p> -->
-<!--           </td> -->
-<!--         </table>    -->
-
-
-<!--         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>MoE-LLaVA: Mixture of Experts for Large Vision-Language Models </papertitle>
-            <br>
-            Bin Lin, Zhenyu Tang, Yang Ye, Jiaxi Cui, Bin Zhu, Peng Jin, Jinfa Huang, JunwuvZhang, <strong>Yatian Pang</strong> , Munan Ning, Li Yuan
-            <br>
-            arXiv, 2024
-            <br>
-            [<a href="https://arxiv.org/abs/2401.15947">arXiv link</a>]
-            [<a href="https://github.com/PKU-YuanGroup/MoE-LLaVA">code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=MoE-LLaVA&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              A multi-modal pretraining framework.
-            </p> -->
-<!--           </td> -->
-<!--         </table>    -->
-
+        </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <td style="padding:20px;width:100%;vertical-align:middle">
-            <papertitle>Masked autoencoders for point cloud self-supervised learning</papertitle>
+            <span class="tag-generation">[generation]</span> <papertitle>Envision3D: One Image to 3D with Anchor Views Interpolation</papertitle>
             <br>
-            <strong>Yatian Pang</strong>, Wenxiao Wang, Francis EH Tay, Wei Liu, Yonghong Tian, Li Yuan
- 
+            <strong>Yatian Pang</strong>, et al.
+            <br>
+            arXiv, 2024
+            <br>
+            [<a href="https://arxiv.org/abs/2403.08902">arXiv link</a>]
+            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Envision3D&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+          </td>
+        </table>
+
+                <!-- MoE-LLaVA -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+                  <td style="padding:20px;width:100%;vertical-align:middle">
+                    <span class="tag-understanding">[understanding]</span> <papertitle>MoE-LLaVA: Mixture of Experts for Large Vision-Language Models</papertitle>
+                    <br>
+                    Bin Lin, et al., <strong>Yatian Pang</strong>, et al.
+                    <br>
+                    IEEE Transactions on Multimedia (TMM), 2024
+                    <br>
+                    [<a href="https://arxiv.org/pdf/2401.15947">arXiv link</a>]
+                    [<a href="https://github.com/PKU-YuanGroup/MoE-LLaVA">code</a>]
+                    <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=MoE-LLaVA&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+                    <p>
+                      A large vision-language model framework using Mixture-of-Experts (MoE) architecture to improve scalability and efficiency for multi-modal tasks.
+                    </p>
+                  </td>
+                </table>  
+        
+                <!-- LanguageBind -->
+                <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+                  <td style="padding:20px;width:100%;vertical-align:middle">
+                    <span class="tag-understanding">[understanding]</span> <papertitle>LanguageBind: Extending Video-Language Pretraining to N-Modality by Language-Based Semantic Alignment</papertitle>
+                    <br>
+                    Bin Zhu, et al., <strong>Yatian Pang</strong>, et al.
+                    <br>
+                    International Conference on Learning Representations (ICLR) 2024
+                    <br>
+                    [<a href="https://arxiv.org/abs/2310.01852">arXiv link</a>]
+                    [<a href="https://github.com/PKU-YuanGroup/LanguageBind">code</a>]
+                    <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=LanguageBind&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+                    <p>
+                      A multi-modal pretraining framework that unifies video, language, and additional modalities through language-based semantic alignment for cross-modal understanding.
+                    </p>
+                  </td>
+                </table>  
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <span class="tag-understanding">[understanding]</span> <papertitle>Masked autoencoders for point cloud self-supervised learning</papertitle>
+            <br>
+            <strong>Yatian Pang</strong>, et al.
             <br>
             ECCV, 2022
             <br>
             [<a href="https://arxiv.org/abs/2203.06604">arXiv link</a>]
             [<a href="https://github.com/Pang-Yatian/Point-MAE">code</a>]
             <iframe src="https://ghbtns.com/github-btn.html?user=Pang-Yatian&repo=Point-MAE&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            <p></p>
-            <!-- <p>
-              A simple masked autoencoder framework for self-supervised learning on point cloud.
-            </p> -->
           </td>
-        </table>  
+        </table>
 
-
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+        <!-- Education Section -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tbody><tr>
             <td width="100%" valign="middle">
               <heading>Education</heading>
@@ -211,32 +245,21 @@
           </tbody>
         </tbody></table>
 
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tbody>
-              <td width="15%">
-                <img src="images/nus.png" width="80">
-              </td>
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>National University of Singapore</strong>, Singapore <br>
-                <br>
-                Ph.D. <br>
-              </td>
-            </tr> 
-
-     
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Invited Talk</heading>
-            <br>
-            <span style="color: #ff0000">I'm always more than willing to give a talk about my works and my field of study!</span>
-            <span style="color: #ff0000">Feel free to reach out :)</span>
-            <br><br>
-            <strong>Introduction to Federated Learning</strong> @ UMass Amherst, host: Hong Yu
-            <br>
-            <strong>Continual Learning via Bit-Level Information Preserving</strong> @ ContinualAI, host: Vincenzo Lomonaco
-            <br>
-          </td>
-        </table> -->
+              <tr>
+                <td width="15%">
+                  <img src="images/nus.png" width="80">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <strong>National University of Singapore</strong>, Singapore <br>
+                  Ph.D. <br>
+                  Aug 2021 - Present <br>
+                  Advisor: Prof. Tay Eng Hock, Francis <br>
+                  Collaborator: Prof. Li Yuan (Peking University)
+                </td>
+              </tr>
+        </tbody></table>
 
         <table width="100%" cellspacing="0" cellpadding="20" border="0" align="center">
           <tbody><tr>
