@@ -1,0 +1,414 @@
+/*
+  =======================================
+  STYLESHEET.CSS - NVIDIA GREEN PALETTE
+  =======================================
+*/
+
+/* Fallback for Inter - you might need to link this via Google Fonts if not locally available */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'); 
+
+/* --- CSS Variables for Easy Adjustment --- */
+:root {
+  /* User's custom profile size definition */
+  --profile-size-h: calc(3072px * 0.15); 
+  --profile-size-w: calc(2304px * 0.15); 
+
+  /* NVIDIA Green Palette */
+  --color-primary-accent: #76B900; /* NVIDIA's brand green for dividers/accents */
+  --color-link-hover: #1772d0; 
+  --color-link-default: #76B900;   /* A darker, safe green for link interaction */
+
+  /* Light green background color used for tags and vision block */
+  --color-tag-background: #f0f7ec;
+}
+
+/* --- Core Typography and Palette --- */
+body, p, a, strong, h1, h2, h3 {
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  color: #212529; 
+}
+
+
+/* --- Global Structure and Layout --- */
+body {
+  margin: 0;
+  padding: 40px 0;
+  background-color: #f4f7f9; 
+}
+
+.container {
+  width: 100%;
+  max-width: 960px; 
+  margin: 0 auto;
+  padding: 0 60px;
+  background-color: #ffffff; 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+  border-radius: 12px;
+}
+
+/* --- Links and Highlighting --- */
+a {
+  color: var(--color-link-default); 
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:focus,
+a:hover {
+  color: var(--color-link-hover); 
+  text-decoration: underline;
+}
+
+/* --- Headings and Titles --- */
+.name {
+  font-size: 2.8em; 
+  font-weight: 800; 
+  margin-bottom: 0.1em;
+}
+
+h2 { /* Section Headers */
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #1a1a1a;
+  padding-top: 35px;
+  border-bottom: 3px solid var(--color-primary-accent); 
+  padding-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+h3 { /* Project/Paper Titles */
+  font-size: 1.15em;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.role-highlight {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #000;
+}
+
+/* --- Research Vision Block --- */
+.vision-block {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background-color: var(--color-tag-background); /* Uses light green variable */
+    /* border-left: 5px solid var(--color-primary-accent);  */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vision-block p {
+    font-size: 1.05em;
+    font-weight: 500;
+    margin: 0.5;
+}
+.vision-block strong {
+    color: #333; 
+}
+
+p {
+  line-height: 1.7;
+  font-size: 0.95em;
+}
+.highlight-links {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.links {
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+/* --- Profile Section (Header & Photo Styling) --- */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0 30px;
+}
+
+.profile-photo {
+  width: var(--profile-size-w); 
+  height: var(--profile-size-h); 
+  flex-shrink: 0;
+  border-radius: 10%; 
+  border: 10px solid var(--color-tag-background); 
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);  */
+  overflow: hidden; 
+  transition: all 0.3s ease-in-out; /* Add transition for smoothness (Idea 4) */
+}
+
+/* IDEA 4: Profile Photo Glow Hover Effect */
+.profile-photo:hover {
+  transform: scale(1.01); /* Subtle lift */
+  /* Green glow effect */
+  box-shadow: 0 0 20px rgba(118, 185, 0, 0.7), 0 0 5px rgba(0, 0, 0, 0.1); 
+  border-color: var(--color-primary-accent); /* Make the border pop with accent color */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* --- Project Entries and Kinetic Polish --- */
+.section-description {
+  font-style: italic;
+  color: #777;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.project-entry {
+  padding: 10px 15px; 
+  border: 1px solid #eee; 
+  border-radius: 6px;
+  margin-bottom: 15px; 
+  
+  /* IDEA 9 Setup */
+  position: relative; 
+  overflow: hidden; 
+  z-index: 1; /* Keep content above the wipe background */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+/* IDEA 9 Wipe Effect Background */
+.project-entry::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Start with zero height (the 'wipe') */
+  background-color: rgba(118, 185, 0, 0.05); /* Very subtle green tint */
+  transition: height 0.3s ease-out;
+  z-index: -1; /* Place behind content */
+  border-radius: 6px; 
+}
+
+.project-entry:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+  border-color: #ddd; /* Maintain border style */
+}
+
+.project-entry:hover::before {
+  height: 100%; /* Wipe down to full height on hover */
+}
+
+
+/* Featured projects styling (Qwen-3 VL & Open-Sora-Plan) */
+.featured-entry {
+  padding: 20px 15px; 
+  border: 1px solid #ddd;
+  border-left: 5px solid var(--color-primary-accent); 
+  border-right: 5px solid var(--color-primary-accent); 
+}
+
+.featured-entry:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.abstract-featured {
+  margin: 10px 0;
+  font-style: normal; 
+  color: #333;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px; /* Reduced from 5px to 1px */
+  flex-wrap: wrap; 
+}
+
+.title-group h3 {
+  margin-left: 0; 
+}
+
+/* FIX 2: Remove default top margin on the author line */
+.authors {
+  font-size: 0.9em;
+  color: #6c757d;
+  margin-top: 0px; /* Explicitly removed top margin */
+  margin-bottom: 1px; /* Retain small margin below the line */
+}
+
+/* --- Project Tags (New Monochromatic Style) --- */
+.tag {
+  font-size: 0.8em;
+  padding: 3px 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  font-weight: solid;
+  border: 1px solid #e0e0e0; /* Light gray border */
+  flex-shrink: 0; 
+  line-height: 1.0; 
+  
+  /* Applying the new color scheme */
+  background-color: var(--color-tag-background); /* Light green background */
+  color: #212529; /* Black text */
+}
+
+/* Ensure specific tag classes don't override the monochromatic style */
+.tag-understanding, 
+.tag-generation, 
+.tag-unify {
+  color: #212529 !important; 
+  border-color: #e0e0e0 !important; 
+}
+
+
+/* --- General Publication List (Single Column - Height Adjustment) --- */
+.publication-list {
+    display: flex;
+    flex-direction: column; 
+    gap: 0; 
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+
+
+.publication-list .project-entry {
+    padding: 5px 15px; /* VERY REDUCED VERTICAL PADDING for max compactness */
+    border-bottom: 1px solid #eee; 
+    border-top: none; 
+    border-left: 1px solid #eee; 
+    border-right: 1px solid #eee; 
+    border-radius: 0; 
+    margin-bottom: 0; 
+}
+
+.publication-list .project-entry:hover {
+    box-shadow: none; 
+    transform: none; 
+    background-color: #f7f7f7; 
+}
+
+/* Border adjustments for the stack */
+.publication-list .project-entry:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-top: 1px solid #eee;
+}
+
+.publication-list .project-entry:last-child {
+    border-bottom: 1px solid #eee; 
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.publication-list .links {
+  display: flex;
+  align-items: center;
+  gap: 1px; /* Spacing between links and iframe */
+  margin-top: 5px;
+  font-size: 0.9em;
+  min-height: 20px; /* Ensure space for the iframe */
+}
+
+.publication-list iframe {
+  display: block;
+  /* No need for additional styling, as width and height are set in HTML */
+}
+
+/* --- Education Section --- */
+.education-entry {
+  display: flex;
+  align-items: center; 
+  gap: 15px;
+  /* FIX 1: Reduced vertical padding to tighten spacing between entries */
+  padding: 8px 0 8px;
+  transition: background-color 0.3s ease; 
+  border-radius: 4px;
+}
+
+.education-entry:hover {
+  background-color: #fafafa; 
+}
+
+.education-entry h3 {
+  font-weight: 700;
+  font-size: 1.2em; 
+  color: #1a1a1a;
+  margin-bottom: 0px;
+}
+
+.education-entry .details p {
+    /* FIX 2: Removed default top margin of paragraph to reduce space below h3 */
+    margin-top: 0px; 
+    margin-bottom: 0px;
+    font-size: 0.9em;
+}
+
+.education-entry .details p strong {
+    font-size: 1em; 
+    color: var(--color-primary-accent); 
+}
+
+.nus-logo {
+  width: 90px;
+  height: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+/* --- Footer --- */
+.footer {
+  text-align: center;
+  padding: 25px 0 40px;
+  /* border-top: 1px solid #eee; */
+  font-size: 0.8em;
+  color: #999;
+}
+
+.footer a {
+  color: #999;
+}
+
+.highlight-NV {
+  color: var(--color-primary-accent); /* Custom color */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 600px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .bio {
+    order: 2;
+  }
+  .profile-photo {
+    order: 1;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  /* Stacks tag and title vertically on small screens */
+  .title-group {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .title-group .tag {
+      margin-bottom: 5px;
+      margin-right: 0;
+  }
+}
