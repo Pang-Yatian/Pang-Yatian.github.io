@@ -10,8 +10,8 @@
 /* --- CSS Variables for Easy Adjustment --- */
 :root {
   /* User's custom profile size definition */
-  --profile-size-h: calc(3072px * 0.15); 
-  --profile-size-w: calc(2304px * 0.15); 
+  --profile-size-h: calc(3072px * 0.1); 
+  --profile-size-w: calc(2304px * 0.1); 
 
   /* NVIDIA Green Palette */
   --color-primary-accent: #76B900; /* NVIDIA's brand green for dividers/accents */
@@ -138,9 +138,12 @@ p {
   flex-shrink: 0;
   border-radius: 10%; 
   border: 10px solid var(--color-tag-background); 
-  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);  */
   overflow: hidden; 
-  transition: all 0.3s ease-in-out; /* Add transition for smoothness (Idea 4) */
+  transition: all 0.3s ease-in-out;
+
+  /* 调整上下位置：正值下移，负值上移 */
+  margin-top: 80px; /* 例如：向下移动10px */
+  /* margin-bottom: -5px; 例如：向上微调5px */
 }
 
 /* IDEA 4: Profile Photo Glow Hover Effect */
