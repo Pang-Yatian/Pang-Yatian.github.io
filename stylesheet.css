@@ -169,18 +169,49 @@ p {
   margin-bottom: 15px;
 }
 
+/* UPDATED: Project Entry to be a Flex Container for Image + Content */
 .project-entry {
-  padding: 10px 15px; 
+  display: flex;        /* Added flex layout */
+  align-items: flex-start; /* Align top */
+  gap: 20px;            /* Space between image and content */
+  
+  padding: 10px 10px; 
   border: 1px solid #eee; 
   border-radius: 6px;
   margin-bottom: 15px; 
   
-  /* IDEA 9 Setup */
   position: relative; 
   overflow: hidden; 
-  z-index: 1; /* Keep content above the wipe background */
+  z-index: 1; 
   
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+}
+
+/* NEW: Container for Media (Image/Video) */
+.project-media {
+  margin-top: 20px;
+  /* padding: 5px 5px;  */
+  /* border: 2px solid var(--color-tag-background);  */
+  flex-shrink: 0;       /* Prevent shrinking */
+  width: 320px;         /* Fixed width for thumbnails */
+  height: 180px;        /* Fixed height for consistency */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Placeholder background */
+}
+
+.project-media img, 
+.project-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* Crop content nicely */
+  display: block;
+}
+
+/* NEW: Container for Text Content (Title, Authors, etc) */
+.project-content {
+  flex-grow: 1;         /* Take remaining space */
+  min-width: 0;         /* Prevent text overflow issues */
 }
 
 /* IDEA 9 Wipe Effect Background */
@@ -282,7 +313,7 @@ p {
 
 
 .publication-list .project-entry {
-    padding: 5px 15px; /* VERY REDUCED VERTICAL PADDING for max compactness */
+    padding: 15px 15px; /* Increased padding slightly for better visual balance with images */
     border-bottom: 1px solid #eee; 
     border-top: none; 
     border-left: 1px solid #eee; 
@@ -413,5 +444,16 @@ p {
   .title-group .tag {
       margin-bottom: 5px;
       margin-right: 0;
+  }
+
+  /* Stack Project Images on Mobile */
+  .project-entry {
+      flex-direction: column;
+  }
+  .project-media {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9; /* Maintain video/image ratio */
+      margin-bottom: 10px;
   }
 }
