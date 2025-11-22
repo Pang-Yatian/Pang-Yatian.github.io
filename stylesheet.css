@@ -189,7 +189,8 @@ p {
 
 /* NEW: Container for Media (Image/Video) */
 .project-media {
-  margin-top: 20px;
+  margin-top: 15px;
+  margin-right: 5px;
   /* padding: 5px 5px;  */
   /* border: 2px solid var(--color-tag-background);  */
   flex-shrink: 0;       /* Prevent shrinking */
@@ -307,7 +308,7 @@ p {
     display: flex;
     flex-direction: column; 
     gap: 0; 
-    padding-top: 15px;
+    padding-top: 0;
     padding-bottom: 0;
 }
 
@@ -319,7 +320,7 @@ p {
     border-left: 1px solid #eee; 
     border-right: 1px solid #eee; 
     border-radius: 0; 
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .publication-list .project-entry:hover {
@@ -358,7 +359,8 @@ p {
 .education-entry {
   display: flex;
   align-items: center; 
-  gap: 15px;
+  margin-left: 20px;
+  gap: 20px;
   /* FIX 1: Reduced vertical padding to tighten spacing between entries */
   padding: 8px 0 8px;
   transition: background-color 0.3s ease; 
@@ -398,8 +400,9 @@ p {
 /* --- Footer --- */
 .footer {
   text-align: center;
-  padding: 25px 0 40px;
-  /* border-top: 1px solid #eee; */
+  margin-top: 20px; 
+  padding: 2px 0 5px;
+  border-top: 1px solid #eee;
   font-size: 0.8em;
   color: #999;
 }
