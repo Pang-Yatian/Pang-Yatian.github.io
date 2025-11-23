@@ -63,7 +63,8 @@ a:hover {
 .name {
   font-size: 2.8em; 
   font-weight: 800; 
-  margin-bottom: 0.1em;
+  margin-bottom: -0.3em;
+  margin-left: 15px;
 }
 
 h2 { /* Section Headers */
@@ -88,6 +89,8 @@ h3 { /* Project/Paper Titles */
   font-size: 1.1em;
   font-weight: 600;
   color: #000;
+  margin-left: 25px;
+  
 }
 
 /* --- Research Vision Block --- */
@@ -131,7 +134,7 @@ p {
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 20px 0 20px;
+  padding: 0px 0 0px;
 }
 
 .profile-photo {
