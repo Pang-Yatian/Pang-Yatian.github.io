@@ -70,7 +70,7 @@ h2 { /* Section Headers */
   font-size: 1.6em;
   font-weight: 700;
   color: #1a1a1a;
-  padding-top: 35px;
+  padding-top: 5px;
   border-bottom: 3px solid var(--color-primary-accent); 
   padding-bottom: 8px;
   margin-top: 8px;
@@ -98,6 +98,7 @@ h3 { /* Project/Paper Titles */
     /* border-left: 5px solid var(--color-primary-accent);  */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: -20px;
 }
 
 .vision-block p {
@@ -114,8 +115,9 @@ p {
   font-size: 0.95em;
 }
 .highlight-links {
-  margin-top: 20px;
-  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 700;
   font-size: 1.1em;
 }
 
@@ -142,8 +144,7 @@ p {
   transition: all 0.3s ease-in-out;
 
   /* 调整上下位置：正值下移，负值上移 */
-  margin-top: 80px; /* 例如：向下移动10px */
-  /* margin-bottom: -5px; 例如：向上微调5px */
+  margin-top: 185px; /* 例如：向下移动10px */
 }
 
 /* IDEA 4: Profile Photo Glow Hover Effect */
