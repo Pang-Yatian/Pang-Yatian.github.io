@@ -131,7 +131,7 @@ p {
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 40px 0 30px;
+  padding: 20px 0 20px;
 }
 
 .profile-photo {
