@@ -266,13 +266,14 @@ p {
 
 .title-group {
   display: flex;
-  align-items: center;
-  margin-bottom: 0px; /* Reduced from 5px to 1px */
-  flex-wrap: wrap; 
+  align-items: baseline; /* Aligns the text of the tag with the text of the title */
+  margin-bottom: 0px; 
+  flex-wrap: nowrap;     /* CRITICAL FIX: Forces them to stay on the same row */
 }
 
 .title-group h3 {
   margin-left: 0; 
+  flex: 1;               /* CRITICAL FIX: Allows the text within H3 to wrap naturally */
 }
 
 /* FIX 2: Remove default top margin on the author line */
@@ -346,6 +347,7 @@ p {
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
+
 .publication-list .links {
   display: flex;
   align-items: center;
