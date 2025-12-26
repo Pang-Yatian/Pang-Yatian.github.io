@@ -72,9 +72,9 @@ h2 { /* Section Headers */
   font-weight: 700;
   color: #1a1a1a;
   padding-top: 5px;
-  border-bottom: 3px solid var(--color-primary-accent); 
+  border-bottom: 3px solid var(--color-primary-accent);
   padding-bottom: 8px;
-  margin-top: 8px;
+  margin-top: 25px;
   margin-bottom: 8px;
 }
 
@@ -290,9 +290,9 @@ p {
   padding: 3px 8px;
   margin-right: 10px;
   border-radius: 4px;
-  font-weight: solid;
+  font-weight: 600;
   border: 1px solid #e0e0e0; /* Light gray border */
-  flex-shrink: 0; 
+  flex-shrink: 0;
   line-height: 1.0; 
   
   /* Applying the new color scheme */
@@ -320,19 +320,50 @@ p {
 
 
 .publication-list .project-entry {
-    padding: 15px 15px; /* Increased padding slightly for better visual balance with images */
-    border-bottom: 1px solid #eee; 
-    border-top: none; 
-    border-left: 1px solid #eee; 
-    border-right: 1px solid #eee; 
-    border-radius: 0; 
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    border-top: none;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-radius: 0;
     margin-bottom: 0;
 }
 
+.publication-list .project-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.publication-list h3 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.publication-list .authors-links-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.publication-list .authors {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.publication-list .links {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.85em;
+}
+
 .publication-list .project-entry:hover {
-    box-shadow: none; 
-    transform: none; 
-    background-color: #f7f7f7; 
+    box-shadow: none;
+    transform: none;
+    background-color: #f7f7f7;
 }
 
 /* Border adjustments for the stack */
@@ -343,18 +374,9 @@ p {
 }
 
 .publication-list .project-entry:last-child {
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #eee;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-}
-
-.publication-list .links {
-  display: flex;
-  align-items: center;
-  gap: 1px; /* Spacing between links and iframe */
-  margin-top: 5px;
-  font-size: 0.9em;
-  min-height: 20px; /* Ensure space for the iframe */
 }
 
 .publication-list iframe {
@@ -362,15 +384,14 @@ p {
   /* No need for additional styling, as width and height are set in HTML */
 }
 
-/* --- Education Section --- */
+/* --- Education & Experience Section --- */
 .education-entry {
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin-left: 20px;
-  gap: 20px;
-  /* FIX 1: Reduced vertical padding to tighten spacing between entries */
-  padding: 8px 0 8px;
-  transition: background-color 0.3s ease; 
+  gap: 15px;
+  padding: 5px 0;
+  transition: background-color 0.3s ease;
   border-radius: 4px;
 }
 
@@ -380,25 +401,24 @@ p {
 
 .education-entry h3 {
   font-weight: 700;
-  font-size: 1.2em; 
+  font-size: 1.05em;
   color: #1a1a1a;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .education-entry .details p {
-    /* FIX 2: Removed default top margin of paragraph to reduce space below h3 */
-    margin-top: 0px; 
-    margin-bottom: 0px;
-    font-size: 0.9em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.85em;
 }
 
 .education-entry .details p strong {
-    font-size: 1em; 
-    color: var(--color-primary-accent); 
+    font-size: 1em;
+    color: var(--color-primary-accent);
 }
 
 .nus-logo {
-  width: 90px;
+  width: 70px;
   height: auto;
   flex-shrink: 0;
   border-radius: 4px;
@@ -429,8 +449,8 @@ p {
   }
 }
 
-.gallery-item:hover {
-  z-index: 100;
+.gallery-item {
+  overflow: hidden;
 }
 
 .gallery-item img {
@@ -442,62 +462,11 @@ p {
   object-fit: cover;
   display: block;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* 720p hover preview - original ratio */
-.gallery-item::after {
-  content: '';
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  width: 80vw;
-  max-width: 900px;
-  height: 70vh;
-  max-height: 600px;
-  background-image: var(--bg-image);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 12px;
-  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
-  opacity: 0;
-  visibility: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-.gallery-item:hover::after {
-  transform: translateX(-50%) scale(1);
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Backdrop on hover */
-.gallery-item::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s ease;
-  pointer-events: none;
-  z-index: 99;
-  visibility: hidden;
-}
-
-.gallery-item:hover::before {
-  background: rgba(0, 0, 0, 0.75);
-  visibility: visible;
+  transform: scale(1.08);
 }
 
 .gallery-more {
@@ -597,10 +566,56 @@ p {
   }
 }
 
+/* --- News Section --- */
+.news-section {
+  padding-bottom: 10px;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.news-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+.news-list li:last-child {
+  border-bottom: none;
+}
+
+.news-date {
+  display: inline-block;
+  background-color: var(--color-tag-background);
+  color: var(--color-primary-accent);
+  font-weight: 600;
+  font-size: 0.85em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* --- Subtle Load Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-section,
+.section-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
 /* --- Footer --- */
 .footer {
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 20px;
   padding: 2px 0 5px;
   border-top: 1px solid #eee;
   font-size: 0.8em;
