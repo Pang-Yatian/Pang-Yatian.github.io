@@ -10,40 +10,143 @@
 /* --- CSS Variables for Easy Adjustment --- */
 :root {
   /* User's custom profile size definition */
-  --profile-size-h: calc(3072px * 0.1); 
-  --profile-size-w: calc(2304px * 0.1); 
+  --profile-size-h: calc(3072px * 0.1);
+  --profile-size-w: calc(2304px * 0.1);
 
   /* NVIDIA Green Palette */
-  --color-primary-accent: #76B900; /* NVIDIA's brand green for dividers/accents */
-  --color-link-hover: #1772d0; 
-  --color-link-default: #76B900;   /* A darker, safe green for link interaction */
+  --color-primary-accent: #76B900;
+  --color-link-hover: #1772d0;
+  --color-link-default: #76B900;
 
-  /* Light green background color used for tags and vision block */
+  /* Light Mode Colors */
+  --color-bg: #f5f7fa;
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-muted: #999;
   --color-tag-background: #f0f7ec;
+  --color-border: #eee;
+  --color-border-dark: #ddd;
+  --color-hover-bg: #f7f7f7;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Colors */
+[data-theme="dark"] {
+  --color-bg: #1a1f26;
+  --color-text: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+  --color-tag-background: #1a2e1a;
+  --color-border: #30363d;
+  --color-border-dark: #484f58;
+  --color-hover-bg: #161b22;
+  --color-shadow: rgba(0, 0, 0, 0.4);
+  --color-link-hover: #58a6ff;
+}
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #1a1f26;
+    --color-text: #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-text-muted: #6e7681;
+    --color-tag-background: #1a2e1a;
+    --color-border: #30363d;
+    --color-border-dark: #484f58;
+    --color-hover-bg: #161b22;
+    --color-shadow: rgba(0, 0, 0, 0.4);
+    --color-link-hover: #58a6ff;
+  }
 }
 
 /* --- Core Typography and Palette --- */
 body, p, a, strong, h1, h2, h3 {
-  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-  color: #212529; 
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: var(--color-text);
 }
 
+/* --- Static Background (disabled canvas) --- */
+#particles-bg {
+  display: none;
+}
 
 /* --- Global Structure and Layout --- */
-body {
+html, body {
   margin: 0;
-  padding: 40px 0;
-  background-color: #f4f7f9; 
+  background: var(--color-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  padding: 20px 0;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--color-tag-background);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px var(--color-shadow);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px var(--color-shadow);
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle .icon-moon {
+  opacity: 1;
+}
+
+.theme-toggle .icon-sun {
+  opacity: 0;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+  opacity: 0;
+  transform: rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }
 
 .container {
   width: 100%;
-  max-width: 960px; 
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 60px;
-  background-color: #ffffff; 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
-  border-radius: 12px;
+  padding: 0 40px;
 }
 
 /* --- Links and Highlighting --- */
@@ -61,8 +164,8 @@ a:hover {
 
 /* --- Headings and Titles --- */
 .name {
-  font-size: 2.8em; 
-  font-weight: 800; 
+  font-size: 2.8em;
+  font-weight: 800;
   margin-bottom: -0.3em;
   margin-left: 15px;
 }
@@ -70,12 +173,19 @@ a:hover {
 h2 { /* Section Headers */
   font-size: 1.6em;
   font-weight: 700;
-  color: #1a1a1a;
-  padding-top: 5px;
-  border-bottom: 3px solid var(--color-primary-accent);
-  padding-bottom: 8px;
+  color: var(--color-text);
   margin-top: 25px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #76B900, transparent);
 }
 
 h3 { /* Project/Paper Titles */
@@ -88,9 +198,8 @@ h3 { /* Project/Paper Titles */
 .role-highlight {
   font-size: 1.1em;
   font-weight: 600;
-  color: #000;
+  color: var(--color-text);
   margin-left: 25px;
-  
 }
 
 /* --- Research Vision Block --- */
@@ -110,7 +219,7 @@ h3 { /* Project/Paper Titles */
     margin: 0.5;
 }
 .vision-block strong {
-    color: #333; 
+    color: var(--color-text);
 }
 
 p {
@@ -168,7 +277,7 @@ p {
 /* --- Project Entries and Kinetic Polish --- */
 .section-description {
   font-style: italic;
-  color: #777;
+  color: var(--color-text-secondary);
   margin-top: -10px;
   margin-bottom: 15px;
   margin-left: 25px;
@@ -181,7 +290,7 @@ p {
   gap: 20px;            /* Space between image and content */
   
   padding: 10px 10px; 
-  border: 1px solid #eee; 
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   margin-bottom: 15px; 
   
@@ -203,7 +312,7 @@ p {
   height: 180px;        /* Fixed height for consistency */
   border-radius: 10px;
   overflow: hidden;
-  background-color: #f0f0f0; /* Placeholder background */
+  background-color: var(--color-hover-bg); /* Placeholder background */
 }
 
 .project-media img, 
@@ -237,7 +346,7 @@ p {
 .project-entry:hover {
   transform: translateY(-3px); 
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
-  border-color: #ddd; /* Maintain border style */
+  border-color: var(--color-border-dark); /* Maintain border style */
 }
 
 .project-entry:hover::before {
@@ -247,21 +356,24 @@ p {
 
 /* Featured projects styling (Qwen-3 VL & Open-Sora-Plan) */
 .featured-entry {
-  padding: 20px 15px; 
-  border: 1px solid #ddd;
-  border-left: 5px solid var(--color-primary-accent); 
-  border-right: 5px solid var(--color-primary-accent); 
+  padding: 20px 15px;
+  border: 1px solid var(--color-border-dark);
+  border-left: 5px solid var(--color-border-dark);
+  border-right: 5px solid var(--color-border-dark);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .featured-entry:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-left-color: var(--color-primary-accent);
+  border-right-color: var(--color-primary-accent);
 }
 
 .abstract-featured {
   margin: 10px 0;
-  font-style: normal; 
-  color: #333;
+  font-style: normal;
+  color: var(--color-text);
 }
 
 .title-group {
@@ -279,7 +391,7 @@ p {
 /* FIX 2: Remove default top margin on the author line */
 .authors {
   font-size: 0.9em;
-  color: #6c757d;
+  color: var(--color-text-secondary);
   margin-top: 0px; /* Explicitly removed top margin */
   margin-bottom: 1px; /* Retain small margin below the line */
 }
@@ -297,15 +409,15 @@ p {
   
   /* Applying the new color scheme */
   background-color: var(--color-tag-background); /* Light green background */
-  color: #212529; /* Black text */
+  color: var(--color-text); /* Black text */
 }
 
 /* Ensure specific tag classes don't override the monochromatic style */
-.tag-understanding, 
-.tag-generation, 
+.tag-understanding,
+.tag-generation,
 .tag-unify {
-  color: #212529 !important; 
-  border-color: #e0e0e0 !important; 
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
 }
 
 
@@ -321,10 +433,10 @@ p {
 
 .publication-list .project-entry {
     padding: 12px 15px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
     border-top: none;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
     border-radius: 0;
     margin-bottom: 0;
 }
@@ -363,18 +475,18 @@ p {
 .publication-list .project-entry:hover {
     box-shadow: none;
     transform: none;
-    background-color: #f7f7f7;
+    background-color: var(--color-hover-bg);
 }
 
 /* Border adjustments for the stack */
 .publication-list .project-entry:first-child {
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--color-border);
 }
 
 .publication-list .project-entry:last-child {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--color-border);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
@@ -396,13 +508,13 @@ p {
 }
 
 .education-entry:hover {
-  background-color: #fafafa; 
+  background-color: var(--color-hover-bg);
 }
 
 .education-entry h3 {
   font-weight: 700;
   font-size: 1.05em;
-  color: #1a1a1a;
+  color: var(--color-text);
   margin-bottom: 0;
 }
 
@@ -579,7 +691,7 @@ p {
 
 .news-list li {
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-border);
   font-size: 0.95em;
   line-height: 1.5;
 }
@@ -617,13 +729,13 @@ p {
   text-align: center;
   margin-top: 20px;
   padding: 2px 0 5px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-border);
   font-size: 0.8em;
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 .footer a {
-  color: #999;
+  color: var(--color-text-muted);
 }
 
 .highlight-NV {

@@ -28,6 +28,13 @@
 </head>
 
 <body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+    <span class="icon-sun">☀️</span>
+    <span class="icon-moon">🌙</span>
+  </button>
+
+  <canvas id="particles-bg"></canvas>
   <div class="container">
     <header class="profile-section">
       <div class="bio">
@@ -72,6 +79,7 @@
         <li><span class="news-date">Dec 2025</span> 🎉 Join NVIDIA Deep Imagination Research as Research Scientist!!</li>
       </ul>
     </section>
+
 
     <section class="section-container">
       <h2>🎨 Selected Works</h2>
@@ -200,6 +208,7 @@
       </div>
     </section>
 
+
     <section class="section-container">
       <h2>💻 Work Experience</h2>
 
@@ -226,13 +235,14 @@
         </div>
       </div>
     <div class="education-entry">
-      <img src="images/astar.webp" class="nus-logo" alt="A*STAR Logo">
+      <img src="images/astar.jpg" class="nus-logo" alt="A*STAR Logo">
       <div class="details">
         <h3>A*STAR, Singapore</h3>
         <p>Oct. 2021 - Dec. 2023, Research Engineer & Research Intern. Mentor: Dr. Xiang Li, Prof. <a href="https://zhenghuantu.github.io/">Zhenghua Chen</a></p>
       </div>
     </div>
   </section>
+
 
     <section class="section-container">
       <h2>🎓 Education</h2>
@@ -266,6 +276,7 @@
       </div>
     </div> -->
   </section>
+
 
     <section class="section-container">
       <h2>📷 Gallery</h2>
@@ -305,6 +316,62 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference or system preference
+    function getPreferredTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        return savedTheme;
+      }
+      // Return 'system' to use system preference
+      return 'system';
+    }
+
+    // Apply theme
+    function applyTheme(theme) {
+      if (theme === 'system') {
+        html.removeAttribute('data-theme');
+      } else {
+        html.setAttribute('data-theme', theme);
+      }
+    }
+
+    // Toggle theme
+    function toggleTheme() {
+      const currentTheme = html.getAttribute('data-theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      let newTheme;
+      if (currentTheme === 'dark') {
+        newTheme = 'light';
+      } else if (currentTheme === 'light') {
+        newTheme = 'dark';
+      } else {
+        // Currently using system preference
+        newTheme = systemDark ? 'light' : 'dark';
+      }
+
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+
+    // Initialize theme
+    const initialTheme = getPreferredTheme();
+    applyTheme(initialTheme);
+
+    // Listen for toggle click
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme('system');
+      }
+    });
   </script>
 
 </body>
