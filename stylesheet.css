@@ -409,6 +409,11 @@ p {
   font-weight: 500;
 }
 
+.links iframe {
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
 /* --- Profile Section (Header & Photo Styling) --- */
 .profile-section {
   text-align: left;
