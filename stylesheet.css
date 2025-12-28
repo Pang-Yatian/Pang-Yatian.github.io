@@ -101,19 +101,12 @@ body {
 .floating-header {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 1000px;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 12px 50px;
   min-height: 50px;
   background: var(--color-bg);
-  border: 1px solid rgba(118, 185, 0, 0.35);
-  border-radius: 0 0 12px 12px;
+  border-bottom: 1px solid rgba(118, 185, 0, 0.35);
   box-shadow:
     0 0 10px rgba(118, 185, 0, 0.25),
     0 0 25px rgba(118, 185, 0, 0.15),
@@ -121,6 +114,15 @@ body {
     0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   box-sizing: border-box;
+}
+
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .floating-header .name {
@@ -924,8 +926,7 @@ p {
         padding: 20px 20px;
     }
 
-    .floating-header {
-        width: calc(100% - 20px);
+    .header-content {
         padding: 10px 20px;
     }
 
@@ -950,9 +951,11 @@ p {
 
 @media (max-width: 600px) {
   /* Floating Header Mobile */
-  .floating-header {
-    width: calc(100% - 10px);
+  .header-content {
     padding: 8px 15px;
+  }
+
+  .floating-header {
     min-height: 40px;
   }
 
