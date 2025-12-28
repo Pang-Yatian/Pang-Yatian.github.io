@@ -58,9 +58,6 @@
 </head>
 
 <body>
-  <!-- Skip to main content link for accessibility -->
-  <a href="#about" class="skip-link">Skip to main content</a>
-
   <!-- Floating Header -->
   <nav class="floating-header">
     <div class="header-content">
@@ -470,17 +467,7 @@
       }
     }
 
-    let lastTime = 0;
-    const fps = 30; // Limit to 30fps for performance
-    const frameInterval = 1000 / fps;
-
-    function drawStars(currentTime) {
-      requestAnimationFrame(drawStars);
-
-      // Throttle frame rate
-      if (currentTime - lastTime < frameInterval) return;
-      lastTime = currentTime;
-
+    function drawStars() {
       // Get current theme background color
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
         (!document.documentElement.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -496,23 +483,20 @@
         const twinkle = (Math.sin(star.twinklePhase) + 1) / 2;
         const currentOpacity = star.opacity * (0.5 + twinkle * 0.5);
 
-        // Draw outer glow (no shadowBlur - much faster)
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(118, 185, 0, ${currentOpacity * 0.1})`;
-        ctx.fill();
-
-        // Draw middle glow
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size * 1.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(118, 185, 0, ${currentOpacity * 0.3})`;
-        ctx.fill();
-
-        // Draw star core
+        // Draw star with glow
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(118, 185, 0, ${currentOpacity})`;
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = `rgba(118, 185, 0, ${currentOpacity * 1.5})`;
         ctx.fill();
+
+        // Extra glow layer
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(118, 185, 0, ${currentOpacity * 0.2})`;
+        ctx.fill();
+        ctx.shadowBlur = 0;
 
         // Move star
         star.x += star.speedX;
@@ -524,6 +508,8 @@
         if (star.y < 0) star.y = canvas.height;
         if (star.y > canvas.height) star.y = 0;
       });
+
+      requestAnimationFrame(drawStars);
     }
 
     window.addEventListener('resize', () => {
@@ -533,7 +519,7 @@
 
     resizeCanvas();
     createStars();
-    requestAnimationFrame(drawStars);
+    drawStars();
 
     // Active section detection for navigation using Intersection Observer
     const sections = document.querySelectorAll('section[id]');
