@@ -599,7 +599,11 @@ p {
 .publication-list .project-entry:hover {
     box-shadow: none;
     transform: none;
-    background-color: var(--color-hover-bg);
+    background-color: transparent;
+}
+
+.publication-list .project-entry::before {
+    display: none;
 }
 
 /* Border adjustments for the stack */
