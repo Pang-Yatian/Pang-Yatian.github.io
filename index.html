@@ -6,8 +6,8 @@
 
   <meta name="author" content="Yatian Pang">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Yatian Pang - Research Scientist at NVIDIA Deep Imagination Research.">
-  <meta name="keywords" content="Yatian Pang">
+  <meta name="description" content="Research Scientist at NVIDIA specializing in multimodal AI, vision-language models, and video understanding. PhD candidate at NUS.">
+  <meta name="keywords" content="Yatian Pang, NVIDIA, Research Scientist, VLM, Video Understanding, Multimodal AI">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -22,12 +22,45 @@
   <meta name="twitter:description" content="Research Scientist at NVIDIA.">
   <meta name="twitter:image" content="https://pang-yatian.github.io/images/pyt.jpg">
 
+  <link rel="canonical" href="https://pang-yatian.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yatian Pang",
+    "alternateName": "庞雅天",
+    "url": "https://pang-yatian.github.io",
+    "jobTitle": "Research Scientist",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "NVIDIA"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "National University of Singapore"
+    },
+    "sameAs": [
+      "https://scholar.google.com/citations?user=AZQyNWkAAAAJ",
+      "https://github.com/Pang-Yatian",
+      "https://www.linkedin.com/in/yatian-pang-64b5a2232/"
+    ],
+    "image": "https://pang-yatian.github.io/images/pyt.jpg",
+    "knowsAbout": ["Multimodal AI", "Vision-Language Models", "Video Understanding", "Deep Learning"]
+  }
+  </script>
 
 </head>
 
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#about" class="skip-link">Skip to main content</a>
+
   <!-- Floating Header -->
   <nav class="floating-header">
     <div class="header-content">
@@ -63,7 +96,7 @@
     <span class="icon-moon">🌙</span>
   </button>
 
-  <canvas id="particles-bg"></canvas>
+  <canvas id="particles-bg" role="presentation" aria-hidden="true"></canvas>
   <div class="container">
     <header class="profile-section">
       <p class="role-highlight">
@@ -126,8 +159,8 @@
             </p>
         </div>
         <div class="project-media">
-          <video autoplay loop muted playsinline>
-              <source src="projects/Qwen3-VL is here! [CslCL6ucurE].mp4" type="video/mp4">
+          <video autoplay loop muted playsinline preload="metadata">
+              <source src="projects/qwen3-vl-demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
         </div>
@@ -149,7 +182,7 @@
             </p>
         </div>
         <div class="project-media">
-          <video autoplay loop muted playsinline>
+          <video autoplay loop muted playsinline preload="metadata">
               <source src="projects/osp.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>

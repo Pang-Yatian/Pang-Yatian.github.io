@@ -60,6 +60,35 @@
   }
 }
 
+/* --- Skip Link for Accessibility --- */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-accent);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Reduced Motion Support --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* --- Core Typography and Palette --- */
 body, p, a, strong, h1, h2, h3 {
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -397,13 +426,6 @@ p {
   line-height: 1.7;
   font-size: 0.95em;
 }
-.highlight-links {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: 700;
-  font-size: 1.1em;
-}
-
 .links {
   /* margin-top: 20px; */
   font-weight: 500;
@@ -583,15 +605,6 @@ p {
   background-color: var(--color-tag-background); /* Light green background */
   color: var(--color-text); /* Black text */
 }
-
-/* Ensure specific tag classes don't override the monochromatic style */
-.tag-understanding,
-.tag-generation,
-.tag-unify {
-  color: var(--color-text) !important;
-  border-color: var(--color-border) !important;
-}
-
 
 /* --- General Publication List (Single Column - Height Adjustment) --- */
 .publication-list {
@@ -919,10 +932,6 @@ p {
 
 .footer a {
   color: var(--color-text-muted);
-}
-
-.highlight-NV {
-  color: var(--color-primary-accent); /* Custom color */
 }
 
 /* --- Responsive Adjustments --- */
