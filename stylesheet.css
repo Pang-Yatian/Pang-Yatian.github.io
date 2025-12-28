@@ -66,28 +66,91 @@ body, p, a, strong, h1, h2, h3 {
   color: var(--color-text);
 }
 
-/* --- Static Background (disabled canvas) --- */
+/* --- Animated Stars Background --- */
 #particles-bg {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* --- Global Structure and Layout --- */
 html, body {
   margin: 0;
-  background: var(--color-bg);
+  background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-  padding: 20px 0;
+  padding: 70px 0 20px 0;
+}
+
+/* --- Floating Header --- */
+.floating-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1000px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 50px;
+  min-height: 50px;
+  background: var(--color-bg);
+  border: 1px solid rgba(118, 185, 0, 0.35);
+  border-radius: 0 0 12px 12px;
+  box-shadow:
+    0 0 10px rgba(118, 185, 0, 0.25),
+    0 0 25px rgba(118, 185, 0, 0.15),
+    0 0 50px rgba(118, 185, 0, 0.08),
+    0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.floating-header .name {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 15px;
+}
+
+.header-icons a {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.header-icons a:hover {
+  color: var(--color-primary-accent);
+  transform: scale(1.15);
+}
+
+.header-icons svg {
+  width: 26px;
+  height: 26px;
 }
 
 /* --- Theme Toggle Button --- */
 .theme-toggle {
   position: fixed;
-  top: 20px;
+  top: 12px;
   right: 20px;
-  z-index: 1000;
+  z-index: 1001;
   background: var(--color-tag-background);
   border: 1px solid var(--color-border);
   border-radius: 50%;
@@ -146,20 +209,52 @@ body {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 40px 50px;
+  background: var(--color-bg);
+  border-radius: 16px;
+  border: 1px solid rgba(118, 185, 0, 0.35);
+  box-shadow:
+    0 0 10px rgba(118, 185, 0, 0.25),
+    0 0 25px rgba(118, 185, 0, 0.15),
+    0 0 50px rgba(118, 185, 0, 0.08),
+    0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Links and Highlighting --- */
 a {
-  color: var(--color-link-default); 
+  color: var(--color-link-default);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  display: inline;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #76B900, transparent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(118, 185, 0, 0.6);
 }
 
 a:focus,
 a:hover {
-  color: var(--color-link-hover); 
-  text-decoration: underline;
+  color: #76B900;
+  text-shadow:
+    0 0 5px rgba(118, 185, 0, 0.5),
+    0 0 10px rgba(118, 185, 0, 0.3),
+    0 0 20px rgba(118, 185, 0, 0.2);
+  text-decoration: none;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 /* --- Headings and Titles --- */
@@ -177,15 +272,21 @@ h2 { /* Section Headers */
   margin-top: 25px;
   margin-bottom: 12px;
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+h2::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #76B900 50%, transparent 100%);
+  filter: drop-shadow(0 0 3px rgba(118, 185, 0, 0.6)) drop-shadow(0 0 6px rgba(118, 185, 0, 0.3));
 }
 
 h2::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, #76B900, transparent);
+  display: none;
 }
 
 h3 { /* Project/Paper Titles */
@@ -196,26 +297,53 @@ h3 { /* Project/Paper Titles */
 }
 
 .role-highlight {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 600;
   color: var(--color-text);
-  margin-left: 25px;
+  margin: 0;
+  margin-left: 1em;
+  text-align: left;
+}
+
+.about-section h2 {
+  margin-bottom: 0;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 5px;
+}
+
+.about-content {
+  flex: 1;
+  padding: 0;
+}
+
+.about-content p {
+  margin: 0 0 12px 0;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
 }
 
 /* --- Research Vision Block --- */
 .vision-block {
-    margin: 30px 0;
-    padding: 20px 30px;
-    background-color: var(--color-tag-background); /* Uses light green variable */
-    /* border-left: 5px solid var(--color-primary-accent);  */
+    margin: 0;
+    padding: 10px 30px;
+    background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: -20px;
+    box-shadow: none;
+    flex: 1;
 }
 
 .vision-block p {
-    font-size: 1.05em;
-    font-weight: 500;
+    font-size: 1.02em;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.8;
     margin: 0.5;
 }
 .vision-block strong {
@@ -240,23 +368,19 @@ p {
 
 /* --- Profile Section (Header & Photo Styling) --- */
 .profile-section {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 0px 0 0px;
+  text-align: left;
+  padding: 15px 0;
 }
 
 .profile-photo {
-  width: var(--profile-size-w); 
-  height: var(--profile-size-h); 
+  width: var(--profile-size-w);
+  height: var(--profile-size-h);
   flex-shrink: 0;
-  border-radius: 10%; 
-  border: 10px solid var(--color-tag-background); 
-  overflow: hidden; 
+  border-radius: 10%;
+  border: 10px solid var(--color-tag-background);
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
-
-  /* 调整上下位置：正值下移，负值上移 */
-  margin-top: 185px; /* 例如：向下移动10px */
+  margin-top: 0;
 }
 
 /* IDEA 4: Profile Photo Glow Hover Effect */
@@ -358,8 +482,8 @@ p {
 .featured-entry {
   padding: 20px 15px;
   border: 1px solid var(--color-border-dark);
-  border-left: 5px solid var(--color-border-dark);
-  border-right: 5px solid var(--color-border-dark);
+  border-left: 5px solid rgba(118, 185, 0, 0.25);
+  border-right: 5px solid rgba(118, 185, 0, 0.25);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -749,16 +873,12 @@ p {
     }
 }
 @media (max-width: 600px) {
-  .profile-section {
+  .about-wrapper {
     flex-direction: column;
     text-align: center;
-    gap: 20px;
   }
-  .bio {
-    order: 2;
-  }
-  .profile-photo {
-    order: 1;
+  .about-wrapper .profile-photo {
+    order: -1;
   }
   .links {
     display: flex;
