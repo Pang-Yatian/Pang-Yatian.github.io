@@ -861,8 +861,8 @@ p {
 }
 
 .news-list li {
-  padding: 8px 0;
-  border-bottom: 1px solid var(--color-border);
+  padding: 4px 0;
+  border-bottom: None;
   font-size: 0.95em;
   line-height: 1.5;
 }
