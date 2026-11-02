@@ -77,8 +77,8 @@ body, p, a, strong, h1, h2, h3 {
   color: var(--color-text);
 }
 
-/* --- Animated Stars Background --- */
-#particles-bg {
+/* --- Green Pixel Ocean Background --- */
+#ascii-ocean-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -86,6 +86,11 @@ body, p, a, strong, h1, h2, h3 {
   height: 100%;
   z-index: -1;
   pointer-events: none;
+  opacity: 0.8;
+}
+
+[data-theme="light"] #ascii-ocean-bg {
+  opacity: 0.55;
 }
 
 /* --- Global Structure and Layout --- */
@@ -97,6 +102,10 @@ html, body {
   margin: 0;
   background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  background: var(--color-bg);
 }
 
 /* Offset for fixed header when jumping to sections */
@@ -264,7 +273,7 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 25px 50px 40px 50px;
-  background: var(--color-bg);
+  background: color-mix(in srgb, var(--color-bg) 82%, transparent);
   border-radius: 16px;
   border: 1px solid rgba(118, 185, 0, 0.35);
   box-shadow:
