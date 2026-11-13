@@ -93,10 +93,10 @@ h1 span { font-size: .48em; font-weight: 400; letter-spacing: 1px; color: var(--
 .publication-list h3 { font-size: 15px; line-height: 1.5; max-width: 780px; margin-bottom: 8px; }
 .authors-links-row { display: flex; flex-wrap: wrap; gap: 15px; align-items: baseline; justify-content: space-between; }
 .authors-links-row .links { flex-shrink: 0; font-size: 11px; }
-.background-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 60px; }
-.background-grid h2 { font-size: 22px; margin-bottom: 28px; }
-.education-entry { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 16px; padding-bottom: 27px; }
-.education-entry:not(:last-child)::before { content: ""; position: absolute; top: 43px; bottom: 7px; left: 18px; width: 1px; background: var(--line); }
+.background-grid { display: block; }
+.background-grid > section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 40px; }
+.background-grid h2 { grid-column: 1 / -1; font-size: 22px; margin-bottom: 4px; }
+.education-entry { position: relative; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .nus-logo { width: 36px; height: 36px; object-fit: contain; padding: 4px; border-radius: 7px; background: #fff; }
 .details h3 { font-size: 14px; line-height: 1.5; margin-bottom: 3px; }
 .entry-date { color: var(--muted); font-size: 11px; margin-bottom: 5px; font-variant-numeric: tabular-nums; }
@@ -115,7 +115,7 @@ h1 span { font-size: .48em; font-weight: 400; letter-spacing: 1px; color: var(--
   .hero { gap: 30px; grid-template-columns: minmax(0, 1fr) 180px; }
   .hero .eyebrow { font-size: 10px; letter-spacing: .6px; }
   h1 span { display: block; margin: 9px 0 0; }
-  .background-grid { gap: 30px; }
+  .background-grid > section { column-gap: 28px; }
 }
 @media (max-width: 700px) {
   .container { padding-inline: 22px; background: color-mix(in srgb, var(--bg) 96%, transparent); }
@@ -150,7 +150,7 @@ h1 span { font-size: .48em; font-weight: 400; letter-spacing: 1px; color: var(--
   .abstract-featured { font-size: 13px; }
   .authors-links-row { flex-direction: column; gap: 8px; }
   .publication-list h3 { font-size: 14px; }
-  .background-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .background-grid > section { grid-template-columns: minmax(0, 1fr); gap: 22px; }
   .background-grid h2 { font-size: 23px; }
   .details h3 { font-size: 14px; }
   .entry-date, .entry-description { font-size: 12px; }
