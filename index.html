@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Yatian Pang</title>
@@ -25,6 +25,8 @@
   <link rel="canonical" href="https://pang-yatian.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="js/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
 
@@ -58,106 +60,65 @@
 </head>
 
 <body>
-  <!-- Floating Header -->
-  <nav class="floating-header">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
     <div class="header-content">
-      <h1 class="name">Yatian Pang (庞雅天)</h1>
-      <div class="header-icons">
-        <a href="mailto:yatian_pang@u.nus.edu" title="Email">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </a>
-        <a href="https://scholar.google.com/citations?user=AZQyNWkAAAAJ&hl=en" title="Google Scholar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-        </a>
-        <a href="https://github.com/Pang-Yatian" title="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/yatian-pang-64b5a2232/" title="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        </a>
-      </div>
-      <nav class="header-nav">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#works">Works</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
+      <a class="brand" href="#about">Yatian Pang<span aria-hidden="true">.</span></a>
+      <nav class="header-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#about" aria-current="location">About</a>
+        <a href="#works">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Background</a>
         <a href="#gallery">Gallery</a>
       </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme"><span aria-hidden="true" class="theme-icon">☼</span></button>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
     </div>
-  </nav>
-
-  <!-- Theme Toggle Button -->
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-    <span class="icon-sun">☀️</span>
-    <span class="icon-moon">🌙</span>
-  </button>
-
+  </header>
   <canvas id="ascii-ocean-bg" role="presentation" aria-hidden="true"></canvas>
-  <div class="container">
-    <header class="profile-section">
-      <p class="role-highlight">
-           Research Scientist, NVIDIA
-      </p>
-      <!-- <p class="role-highlight">
-           PhD, National University of Singapore
-      </p> -->
-    </header>
-
-    <section id="about" class="section-container about-section">
-      <h2>👋 About Me</h2>
-      <div class="about-wrapper">
-        <div class="vision-block">
-          <p>
-            Greetings! 
-          </p>
-
-          <p>
-            I am a Research Scientist at <a href="https://research.nvidia.com/labs/cosmos-lab/">NVIDIA Cosmos Lab</a>. My long-term goal is to build general-purpose AI agents that can reason about the physical world, simulate possible futures, and choose effective actions using world models that unify multimodal understanding and generation.
-          </p>
-            
-          <p>
-            I obtained my Ph.D. at the National University of Singapore. I feel incredibly lucky to be supervised by Prof. <a href="https://scholar.google.com/citations?user=mfH9UFIAAAAJ&hl=en">E. H. Francis Tay</a>, collaborate closely with Prof. <a href="https://scholar.google.com/citations?user=-5juAR0AAAAJ&amp;hl=en">Li Yuan</a> from PKU, and gain valuable experience working with Alibaba's Qwen, Everlyn AI, and A*STAR.
-          </p>
-
-        </div>
-        <div class="profile-photo">
-          <img alt="profile photo" src="images/pyt.jpg">
+  <main class="container" id="main">
+    <section id="about" class="hero" aria-labelledby="profile-name">
+      <div class="hero-copy">
+        <h1 id="profile-name">Yatian Pang <span lang="zh">庞雅天</span></h1>
+        <p class="intro">I am a Research Scientist at <a href="https://research.nvidia.com/labs/cosmos-lab/">NVIDIA Cosmos Lab</a>. My long-term goal is to build general-purpose AI agents that can reason about the physical world, simulate possible futures, and choose effective actions using world models that unify multimodal understanding and generation.</p>
+        <p class="bio">I obtained my Ph.D. at the National University of Singapore. I feel incredibly lucky to be supervised by Prof. <a href="https://scholar.google.com/citations?user=mfH9UFIAAAAJ&hl=en">E. H. Francis Tay</a>, collaborate closely with Prof. <a href="https://scholar.google.com/citations?user=-5juAR0AAAAJ&amp;hl=en">Li Yuan</a> from PKU, and gain valuable experience working with Alibaba's Qwen, Everlyn AI, and A*STAR.</p>
+        <div class="contact-links" aria-label="Contact and profiles">
+          <a href="mailto:yatian_pang@u.nus.edu">Email <span aria-hidden="true">↗</span></a>
+          <a href="https://scholar.google.com/citations?user=AZQyNWkAAAAJ&amp;hl=en">Scholar <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Pang-Yatian">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/yatian-pang-64b5a2232/">LinkedIn <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+      <div class="profile-photo"><img alt="Yatian Pang" src="images/pyt.jpg" width="2304" height="3072" fetchpriority="high"></div>
     </section>
-
-    <section id="news" class="section-container news-section">
-      <h2>🔥 News</h2>
+    <section id="news" class="news-section" aria-labelledby="news-title">
+      <h2 id="news-title">Latest</h2>
       <ul class="news-list">
-        <li><span class="news-date">Jun 2026</span> 🚀 Cosmos 3 released!</li>
-        <li><span class="news-date">Jan 2026</span> 🎓 Officially Dr. P!</li>
-        <li><span class="news-date">Dec 2025</span> 🎉 Join NVIDIA as Research Scientist!</li>
+        <li><span class="news-date">Jun 2026</span> <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/">Cosmos 3 released ↗</a></li>
+        <li><span class="news-date">Jan 2026</span> Officially Dr. P!</li>
+        <li><span class="news-date">Dec 2025</span> Join NVIDIA as Research Scientist!</li>
       </ul>
     </section>
-
-
     <section id="works" class="section-container">
-      <h2>🎨 Selected Works</h2>
-      <!-- <p class="section-description">High-impact works across multi-modal understanding, generation, and unified models. </p> -->
-
+      <div class="section-heading"><div><p class="eyebrow">Selected projects</p><h2>Research in focus</h2></div><span class="section-note">Understanding · Generation · Action</span></div>
       <div class="project-entry featured-entry">
         <div class="project-content">
             <div class="title-group">
-                <h3>🌟 Cosmos 3</h3>
+                <p class="project-tag">World models · 2026</p>
+                <h3>Cosmos 3</h3>
             </div>
             <p class="authors">NVIDIA Cosmos Team, <strong>Yatian Pang</strong> (2026)</p>
             <p class="abstract-featured">
             Cosmos 3, a family of omnimodal world models designed to jointly process and generate language, image, video, audio, and action sequences within a unified mixture-of-transformers architecture.
             </p>
             <p class="links">
-            [<a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/">Project Page</a>]
-            [<a href="https://github.com/nvidia/cosmos">Code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=nvidia&repo=cosmos&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            </p>
+            <a href="https://research.nvidia.com/labs/cosmos-lab/cosmos3/">Project ↗</a>
+            <a href="https://github.com/nvidia/cosmos">Code ↗</a> <iframe src="https://ghbtns.com/github-btn.html?user=nvidia&repo=cosmos&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub stars for Cosmos 3" loading="lazy" class="github-stars"></iframe></p>
         </div>
         <div class="project-media">
-          <video autoplay loop muted playsinline preload="metadata">
+          <video aria-label="Cosmos 3 demonstration" loop muted playsinline controls preload="none" poster="projects/posters/cosmos3.jpg">
               <source src="projects/cosmos3.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
@@ -168,20 +129,19 @@
 
         <div class="project-content">
             <div class="title-group">
-                <h3>🌟 Qwen3-VL</h3>
+                <p class="project-tag">Multimodal understanding · 2025</p>
+                <h3>Qwen3-VL</h3>
             </div>
             <p class="authors">Qwen Team, <strong>Yatian Pang</strong> (2025)</p>
             <p class="abstract-featured">
             One of the most popular open-sourced VLMs. Key contributions to long and streaming video understanding within the Qwen3-VL framework, achieving SOTA results across multiple video benchmarks.
             </p>
             <p class="links">
-            [<a href="https://qwen.ai/blog?id=99f0335c4ad9ff6153e517418d48535ab6d8afef&from=research.latest-advancements-list">Project Page</a>]
-            [<a href="https://github.com/QwenLM/Qwen3-VL">Code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=QwenLM&repo=Qwen3-VL&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            </p>
+            <a href="https://qwen.ai/blog?id=99f0335c4ad9ff6153e517418d48535ab6d8afef&from=research.latest-advancements-list">Project ↗</a>
+            <a href="https://github.com/QwenLM/Qwen3-VL">Code ↗</a> <iframe src="https://ghbtns.com/github-btn.html?user=QwenLM&repo=Qwen3-VL&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub stars for Qwen3-VL" loading="lazy" class="github-stars"></iframe></p>
         </div>
         <div class="project-media">
-          <video autoplay loop muted playsinline preload="metadata">
+          <video aria-label="Qwen3-VL demonstration" loop muted playsinline controls preload="none" poster="projects/posters/qwen3-vl.jpg">
               <source src="projects/qwen3-vl-demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
@@ -191,26 +151,29 @@
       <div class="project-entry featured-entry">
         <div class="project-content">
             <div class="title-group">
-                <h3>🌟 Open-Sora-Plan</h3>
+                <p class="project-tag">Video generation · 2024</p>
+                <h3>Open-Sora-Plan</h3>
             </div>
             <p class="authors">Open-Sora-Plan Team, <strong>Yatian Pang</strong> (2024)</p>
             <p class="abstract-featured">
             Pioneering open-source effort to reproduce Sora. Responsible for the high-resolution, long-duration video generation architecture and curating open-source high-quality video datasets.
             </p>
             <p class="links">
-            [<a href="https://arxiv.org/abs/2412.00131">arXiv link</a>]
-            [<a href="https://github.com/PKU-YuanGroup/Open-Sora-Plan">Code</a>]
-            <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Open-Sora-Plan&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-            </p>
+            <a href="https://arxiv.org/abs/2412.00131">Paper ↗</a>
+            <a href="https://github.com/PKU-YuanGroup/Open-Sora-Plan">Code ↗</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Open-Sora-Plan&type=star&count=true" frameborder="0" scrolling="0" width="150" height="20" title="GitHub stars for Open-Sora-Plan" loading="lazy" class="github-stars"></iframe></p>
         </div>
         <div class="project-media">
-          <video autoplay loop muted playsinline preload="metadata">
+          <video aria-label="Open-Sora-Plan demonstration" loop muted playsinline controls preload="none" poster="projects/posters/open-sora-plan.jpg">
               <source src="projects/osp.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
         </div>
       </div>
-      
+
+
+    </section>
+    <section id="publications" class="section-container">
+      <div class="section-heading"><h2>Selected publications</h2><a class="text-link" href="https://scholar.google.com/citations?user=AZQyNWkAAAAJ&amp;hl=en">All publications ↗</a></div>
       <div class="publication-list">
 
         <div class="project-entry">
@@ -220,7 +183,7 @@
             </div>
             <div class="authors-links-row">
               <p class="authors">Bin Lin, et al., <strong>Yatian Pang</strong>, Li Yuan (2025)</p>
-              <p class="links">[<a href="https://arxiv.org/abs/2506.03147">arXiv</a>] [<a href="https://github.com/PKU-YuanGroup/UniWorld-V1">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=UniWorld&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/abs/2506.03147">arXiv</a> <a href="https://github.com/PKU-YuanGroup/UniWorld-V1">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=UniWorld&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for UniWorld: High-Resolution Semantic Encoders for Unified Visual Understanding and Generation" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
@@ -232,7 +195,7 @@
             </div>
             <div class="authors-links-row">
               <p class="authors"><strong>Yatian Pang</strong>, et al. (AAAI 2026)</p>
-              <p class="links">[<a href="https://arxiv.org/abs/2412.15321">arXiv</a>] [<a href="https://github.com/PKU-YuanGroup/Next-Patch-Prediction">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Next-Patch-Prediction&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/abs/2412.15321">arXiv</a> <a href="https://github.com/PKU-YuanGroup/Next-Patch-Prediction">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=Next-Patch-Prediction&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for Next Patch Prediction for Autoregressive Visual Generation" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
@@ -244,7 +207,7 @@
             </div>
             <div class="authors-links-row">
               <p class="authors"><strong>Yatian Pang</strong>, et al. (ICCV 2025)</p>
-              <p class="links">[<a href="https://arxiv.org/abs/2412.00397">arXiv</a>] [<a href="https://github.com/PKU-YuanGroup/DreamDance">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=DreamDance&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/abs/2412.00397">arXiv</a> <a href="https://github.com/PKU-YuanGroup/DreamDance">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=DreamDance&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for DreamDance: Animating Human Images by Enriching 3D Geometry Cues from 2D Poses" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
@@ -256,7 +219,7 @@
             </div>
             <div class="authors-links-row">
               <p class="authors">Bin Lin, et al., <strong>Yatian Pang</strong>, et al. (TMM 2024)</p>
-              <p class="links">[<a href="https://arxiv.org/pdf/2401.15947">arXiv</a>] [<a href="https://github.com/PKU-YuanGroup/MoE-LLaVA">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=MoE-LLaVA&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/pdf/2401.15947">arXiv</a> <a href="https://github.com/PKU-YuanGroup/MoE-LLaVA">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=MoE-LLaVA&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for MoE-LLaVA: Mixture of Experts for Large Vision-Language Models" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
@@ -268,7 +231,7 @@
             </div>
             <div class="authors-links-row">
               <p class="authors">Bin Zhu, et al., <strong>Yatian Pang</strong>, et al. (ICLR 2024)</p>
-              <p class="links">[<a href="https://arxiv.org/abs/2310.01852">arXiv</a>] [<a href="https://github.com/PKU-YuanGroup/LanguageBind">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=LanguageBind&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/abs/2310.01852">arXiv</a> <a href="https://github.com/PKU-YuanGroup/LanguageBind">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=PKU-YuanGroup&repo=LanguageBind&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for LanguageBind: Extending Video-Language Pretraining to N-Modality by Language-Based Semantic Alignment" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
@@ -280,85 +243,87 @@
             </div>
             <div class="authors-links-row">
               <p class="authors"><strong>Yatian Pang</strong>, et al. (ECCV 2022)</p>
-              <p class="links">[<a href="https://arxiv.org/abs/2203.06604">arXiv</a>] [<a href="https://github.com/Pang-Yatian/Point-MAE">Code</a>] <iframe src="https://ghbtns.com/github-btn.html?user=Pang-Yatian&repo=Point-MAE&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub"></iframe></p>
+              <p class="links"><a href="https://arxiv.org/abs/2203.06604">arXiv</a> <a href="https://github.com/Pang-Yatian/Point-MAE">Code</a> <iframe src="https://ghbtns.com/github-btn.html?user=Pang-Yatian&repo=Point-MAE&type=star&count=true" frameborder="0" scrolling="0" width="120" height="20" title="GitHub stars for Masked Autoencoders for Point Cloud Self-Supervised Learning" loading="lazy" class="github-stars"></iframe></p>
             </div>
           </div>
         </div>
       </div>
+
     </section>
-
-
+    <div class="background-grid">
     <section id="experience" class="section-container">
-      <h2>💻 Research Experience</h2>
+      <h2>Research Experience</h2>
 
       <div class="education-entry">
-        <img src="images/Nvidia_logo.jpg" class="nus-logo" alt="NVIDIA Logo">
+        <img src="images/Nvidia_logo.jpg" class="nus-logo" alt="NVIDIA Logo" loading="lazy">
         <div class="details">
           <h3>NVIDIA, Singapore</h3>
-          <p>Dec. 2025 - Present, Research Scientist</p>
+          <p class="entry-date">Dec. 2025 - Present</p><p class="entry-description">Research Scientist</p>
         </div>
       </div>
 
       <div class="education-entry">
-        <img src="images/qwen.jpg" class="nus-logo" alt="Alibaba Qwen Logo">
+        <img src="images/qwen.jpg" class="nus-logo" alt="Alibaba Qwen Logo" loading="lazy">
         <div class="details">
           <h3>Alibaba Qwen, China</h3>
-          <p>Apr. 2025 - Nov. 2025, Research Intern. Mentor: Dr. <a href="https://scholar.google.com/citations?user=ylhI1JsAAAAJ&hl"> Shuai Bai</a>, Dr. <a href="https://scholar.google.com.hk/citations?user=kMpV724AAAAJ&hl=en"> Hang Zhang</a>.</p>
+          <p class="entry-date">Apr. 2025 - Nov. 2025</p><p class="entry-description">Research Intern. Mentor: Dr. <a href="https://scholar.google.com/citations?user=ylhI1JsAAAAJ&hl"> Shuai Bai</a>, Dr. <a href="https://scholar.google.com.hk/citations?user=kMpV724AAAAJ&hl=en"> Hang Zhang</a>.</p>
         </div>
       </div>
       <div class="education-entry">
-        <img src="images/everlyn.png" class="nus-logo" alt="Everlyn Logo">
+        <img src="images/everlyn.png" class="nus-logo" alt="Everlyn Logo" loading="lazy">
         <div class="details">
           <h3>Everlyn, China</h3>
-          <p>Oct. 2024 - Apr. 2025, Researcher. Mentor: Prof. <a href="https://sites.google.com/site/sernam/">Ser-Nam Lim</a>, Prof. <a href="https://leehomyc.github.io/">Harry Yang</a></p>
+          <p class="entry-date">Oct. 2024 - Apr. 2025</p><p class="entry-description">Researcher. Mentor: Prof. <a href="https://sites.google.com/site/sernam/">Ser-Nam Lim</a>, Prof. <a href="https://leehomyc.github.io/">Harry Yang</a></p>
         </div>
       </div>
     <div class="education-entry">
-      <img src="images/astar.jpg" class="nus-logo" alt="A*STAR Logo">
+      <img src="images/astar.jpg" class="nus-logo" alt="A*STAR Logo" loading="lazy">
       <div class="details">
         <h3>A*STAR, Singapore</h3>
-        <p>Oct. 2021 - Dec. 2023, Research Engineer & Research Intern. Mentor: Dr. Xiang Li, Prof. <a href="https://zhenghuantu.github.io/">Zhenghua Chen</a></p>
+        <p class="entry-date">Oct. 2021 - Dec. 2023</p><p class="entry-description">Research Engineer & Research Intern. Mentor: Dr. Xiang Li, Prof. <a href="https://zhenghuantu.github.io/">Zhenghua Chen</a></p>
       </div>
     </div>
   </section>
 
 
     <section id="education" class="section-container">
-      <h2>🎓 Education</h2>
+      <h2>Education</h2>
 
       <div class="education-entry">
-        <img src="images/nus.png" class="nus-logo" alt="NUS Logo">
+        <img src="images/nus.png" class="nus-logo" alt="NUS Logo" loading="lazy">
         <div class="details">
           <h3>National University of Singapore, Singapore</h3>
-          <p>Aug. 2021 - Jan. 2026, PhD</p>
+          <p class="entry-date">Aug. 2021 - Jan. 2026</p><p class="entry-description">PhD</p>
         </div>
       </div>
       <div class="education-entry">
-        <img src="images/pku.png" class="nus-logo" alt="Peking University Logo">
+        <img src="images/pku.png" class="nus-logo" alt="Peking University Logo" loading="lazy">
         <div class="details">
           <h3>Peking University, China</h3>
-          <p>Jul. 2023 - Dec. 2024, Visiting Scholar</p>
+          <p class="entry-date">Jul. 2023 - Dec. 2024</p><p class="entry-description">Visiting Scholar</p>
         </div>
       </div>
       <div class="education-entry">
-        <img src="images/nus.png" class="nus-logo" alt="NUS Logo">
+        <img src="images/nus.png" class="nus-logo" alt="NUS Logo" loading="lazy">
         <div class="details">
           <h3>National University of Singapore, Singapore</h3>
-          <p>Aug. 2020 - Jun. 2021, MSc</p>
+          <p class="entry-date">Aug. 2020 - Jun. 2021</p><p class="entry-description">MSc</p>
         </div>
       </div>
     <div class="education-entry">
-      <img src="images/soochow.png" class="nus-logo" alt="NUS Logo">
+      <img src="images/soochow.png" class="nus-logo" alt="Soochow University Logo" loading="lazy">
       <div class="details">
         <h3>Soochow University, China</h3>
-        <p>Sep. 2016 - Jun. 2020, BEng</p>
+        <p class="entry-date">Sep. 2016 - Jun. 2020</p><p class="entry-description">BEng</p>
       </div>
     </div>
   </section>
 
 
-    <section id="gallery" class="section-container">
-      <h2>📷 Gallery</h2>
+
+    </div>
+    <section id="gallery" class="section-container gallery-section">
+      <div class="section-heading"><div><p class="eyebrow">Beyond research</p><h2>Out in the world</h2></div><a class="text-link" href="https://pang-yatian.github.io/photo_record/">Explore my travel gallery ↗</a></div>
       <div class="gallery-grid">
         <a href="https://pang-yatian.github.io/photo_record/" target="_blank" rel="noopener" class="gallery-item">
           <img src="images/gallery/hangzhou1.jpeg" alt="Autumn leaves in Hangzhou" loading="lazy">
@@ -375,120 +340,12 @@
         <a href="https://pang-yatian.github.io/photo_record/" target="_blank" rel="noopener" class="gallery-item">
           <img src="images/gallery/lombok.jpeg" alt="Volcanic crater in Lombok" loading="lazy">
         </a>
-        <a href="https://pang-yatian.github.io/photo_record/" target="_blank" rel="noopener" class="gallery-more">
-          <div class="more-bg" style="background-image: url('images/gallery/singapore.jpeg')"></div>
-          <div class="more-content">
-            <span class="more-icon">+</span>
-            <span class="more-text">More</span>
-          </div>
-        </a>
       </div>
+
     </section>
-
-    <footer class="footer">
-      <div class="footer-divider"></div>
-      <p>
-        <small> © <span id="year"></span> Yatian Pang. Template designed with Gemini and Claude. </small>
-      </p>
-    </footer>
-
-  </div><!-- /.container -->
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // Check for saved theme preference, default to dark
-    function getPreferredTheme() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        return savedTheme;
-      }
-      // Default to dark mode
-      return 'dark';
-    }
-
-    // Apply theme
-    function applyTheme(theme) {
-      if (theme === 'system') {
-        html.removeAttribute('data-theme');
-      } else {
-        html.setAttribute('data-theme', theme);
-      }
-    }
-
-    // Toggle theme
-    function toggleTheme() {
-      const currentTheme = html.getAttribute('data-theme');
-      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      let newTheme;
-      if (currentTheme === 'dark') {
-        newTheme = 'light';
-      } else if (currentTheme === 'light') {
-        newTheme = 'dark';
-      } else {
-        // Currently using system preference
-        newTheme = systemDark ? 'light' : 'dark';
-      }
-
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    }
-
-    // Initialize theme
-    const initialTheme = getPreferredTheme();
-    applyTheme(initialTheme);
-
-    // Listen for toggle click
-    themeToggle.addEventListener('click', toggleTheme);
-
-    // Listen for system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
-        applyTheme('system');
-      }
-    });
-
-    // Active section detection for navigation using Intersection Observer
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.header-nav a');
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + sectionId) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, observerOptions);
-
-    sections.forEach(section => observer.observe(section));
-
-    // Handle bottom of page for last sections
-    window.addEventListener('scroll', () => {
-      if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 50) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        const lastLink = document.querySelector('.header-nav a[href="#gallery"]');
-        if (lastLink) lastLink.classList.add('active');
-      }
-    });
-  </script>
-  <script src="js/ascii-ocean.js"></script>
-
+    <footer class="footer"><p>© <span id="year">2026</span> Yatian Pang</p><a href="#about">Back to top ↑</a></footer>
+  </main>
+  <script src="js/site.js" defer></script>
+  <script src="js/ascii-ocean.js" defer></script>
 </body>
 </html>
