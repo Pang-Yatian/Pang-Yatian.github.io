@@ -43,7 +43,7 @@
     }
     if (current === 'news') current = 'about';
     if (current === 'education') current = 'experience';
-    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 30) current = 'gallery';
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 30) current = 'experience';
     links.forEach(link => {
       if (link.hash === `#${current}`) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
